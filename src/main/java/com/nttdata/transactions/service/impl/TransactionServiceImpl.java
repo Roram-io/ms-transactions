@@ -19,37 +19,37 @@ public class TransactionServiceImpl implements TransactionService {
     TransactionRepository transactionRepository;
 
     @Override
-    public Mono<Transaction> listByProductId(String id) {
-        return null;
+    public Flux<Transaction> listByProductId(String id) {
+        return transactionRepository.findTransactionByProductId(id);
     }
 
     @Override
     public Mono<Transaction> listById(String id) {
-        return null;
+        return transactionRepository.findById(id);
+    }
+
+    @Override
+    public Flux<Transaction> listByUserId(String id) {
+        return transactionRepository.findTransactionByUserId(id);
     }
 
     @Override
     public Flux<Transaction> listTransactions() {
-        return null;
-    }
-
-    @Override
-    public Mono<Transaction> listByUserId(String id) {
-        return null;
+        return transactionRepository.findAll();
     }
 
     @Override
     public Mono<Transaction> saveTransaction(Transaction transaction) {
-        return null;
+        return transactionRepository.insert(transaction);
     }
 
     @Override
     public Mono<Transaction> updateTransaction(Transaction transaction) {
-        return null;
+        return transactionRepository.save(transaction);
     }
 
     @Override
     public Mono<Void> removeTransaction(String id) {
-        return null;
+        return transactionRepository.deleteById(id);
     }
 }

@@ -5,13 +5,13 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface TransactionService {
-    Mono<Transaction> listByProductId(String id);
+    Flux<Transaction> listByProductId(String id);
 
     Mono<Transaction> listById(String id);
 
     Flux<Transaction> listTransactions();
 
-    Mono<Transaction> listByUserId(String id);
+    Flux<Transaction> listByUserId(String id);
 
     Mono<Transaction> saveTransaction(Transaction transaction);
 

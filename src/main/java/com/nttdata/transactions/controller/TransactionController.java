@@ -31,13 +31,13 @@ public class TransactionController {
     }
 
     @GetMapping("/product/{id}")
-    public Mono<Transaction> getTransactionByProduct(@PathVariable("id") String id){
+    public Flux<Transaction> getTransactionByProductId(@PathVariable("id") String id){
         log.info("Searching Transaction with product with Id "+id);
         return transactionService.listByProductId(id);
     }
 
     @GetMapping("/user/{id}")
-    public Mono<Transaction> getTransactionByUser(@PathVariable("id") String id){
+    public Flux<Transaction> getTransactionByUserId(@PathVariable("id") String id){
         log.info("Searching a transaction with user id "+id);
         return transactionService.listByUserId(id);
     }

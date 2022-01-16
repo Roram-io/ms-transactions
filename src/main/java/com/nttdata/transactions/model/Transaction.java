@@ -21,5 +21,5 @@ public class Transaction {
     private String productId;
     private String userId;
     private double transactionAmount;
-    private Date transactionDate;
+    private Date transactionDate=new Date();
 }

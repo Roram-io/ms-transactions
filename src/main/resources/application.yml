@@ -8,3 +8,7 @@ spring:
       password: nttdatacorazon
   config:
     import: optional:configserver:http://localhost:8888
+
+  endpoints:
+    url:
+      valid_address: http://localhost:8888/api/v1/account

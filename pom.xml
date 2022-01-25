@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nttdata</groupId>
-	<artifactId>transactions</artifactId>
+	<artifactId>ms-transactions</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>transactions</name>
 	<description>Credits for customer week 1 project</description>

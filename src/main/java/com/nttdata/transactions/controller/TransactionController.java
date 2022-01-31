@@ -48,6 +48,18 @@ public class TransactionController {
         return transactionService.saveTransaction(transaction);
     }
 
+    @PostMapping("/transference")
+    public Mono<Transaction> transference(@RequestParam("idOrigin") String idOrigin, @RequestParam("idDestiny") String idDestiny){
+        log.info("Transference between two accounts");
+        return transactionService.transference(idOrigin,idDestiny);
+    }
+
+    @PostMapping("/{idAccount}")
+    public Mono<Transaction> operation(@PathVariable("idAccount") String idAccount){
+        log.info("Operation on one account");
+        return transactionService.operation(idAccount);
+    }
+
     @PutMapping("/update")
     public Mono<Transaction> updateTransaction(@RequestBody Transaction transaction){
         log.info("Updating the following Id: "+transaction.getId());

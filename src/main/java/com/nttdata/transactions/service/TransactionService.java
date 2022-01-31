@@ -18,4 +18,8 @@ public interface TransactionService {
     Mono<Transaction> updateTransaction(Transaction transaction);
 
     Mono<Void> removeTransaction(String id);
+
+    Mono<Transaction> transference(String idOrigin, String idDestiny);
+
+    Mono<Transaction> operation(String idOrigin);
 }

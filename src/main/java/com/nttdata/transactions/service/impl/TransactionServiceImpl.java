@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -17,6 +18,9 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Autowired
     TransactionRepository transactionRepository;
+
+    @Autowired
+    WebClient webClientAccount;
 
     @Override
     public Flux<Transaction> listByProductId(String id) {
@@ -51,5 +55,18 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public Mono<Void> removeTransaction(String id) {
         return transactionRepository.deleteById(id);
+    }
+
+    @Override
+    public Mono<Transaction> transference(String idOrigin, String idDestiny) {
+        Mono<BankAccount>
+        Mono<BankAccount>
+
+        return ;
+    }
+
+    @Override
+    public Mono<Transaction> operation(String idOrigin) {
+        return
     }
 }
